@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Github, Linkedin, Mail, ArrowUp } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { button } from "motion/react-client";
 
 
 export function Footer() {
@@ -28,6 +29,12 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
           <div className="text-center md:text-left">
+            <button
+                onClick={scrollToTop}
+                className="text-xl font-bold text-white hover:text-[#6366f1] transition-colors mb-2 cursor-pointer"
+            >
+              Luca Chaboissier
+            </button>
             <p className="text-gray-400 text-sm">
               Développeur Web
             </p>
