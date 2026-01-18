@@ -1,8 +1,14 @@
+/*
+  On neutralise les styles du template Vite qui contraignent l'app.
+  La mise en page est gérée via Tailwind (classes dans les composants).
+*/
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  text-align: initial;
 }
 
 .logo {
