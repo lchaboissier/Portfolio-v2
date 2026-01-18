@@ -1,8 +1,20 @@
 import { motion } from 'motion/react';
-import { Heart, Github, Linkedin, Mail, ArrowUp } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowUp } from 'lucide-react';
+import { useState, useEffect } from 'react';
+
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 400);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -17,7 +29,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
           <div className="text-center md:text-left">
             <p className="text-gray-400 text-sm">
-              Développeur Full Stack
+              Développeur Web
             </p>
           </div>
 
@@ -48,25 +60,25 @@ export function Footer() {
           <p className="text-gray-400 text-center sm:text-left">
             © {currentYear} Luca Chaboissier. Tous droits réservés.
           </p>
-          <p className="text-gray-400 flex items-center gap-1.5">
-            Conçu avec <Heart className="text-[#6366f1]" size={16} fill="currentColor" /> et React
-          </p>
         </div>
       </div>
 
       {/* Scroll to top button */}
-      <motion.button
-        onClick={scrollToTop}
-        className="fixed bottom-8 right-8 w-12 h-12 bg-[#6366f1] hover:bg-[#5558e3] text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 z-40"
-        whileHover={{ scale: 1.1, y: -3 }}
-        whileTap={{ scale: 0.9 }}
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-        aria-label="Scroll to top"
-      >
-        <ArrowUp size={20} />
-      </motion.button>
+      {showScrollTop && (
+          <motion.button
+              onClick={scrollToTop}
+              className="fixed bottom-8 right-8 w-12 h-12 bg-[#6366f1] hover:bg-[#5558e3] text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 z-40"
+              whileHover={{ scale: 1.1, y: -3 }}
+              whileTap={{ scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.8, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.8, y: 20 }}
+              transition={{ duration: 0.3 }}
+              aria-label="Scroll to top"
+          >
+            <ArrowUp size={20} />
+          </motion.button>
+      )}
     </footer>
   );
 }
