@@ -1,8 +1,6 @@
 import { motion } from 'motion/react';
 import { Github, Linkedin, Mail, ArrowUp } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { button } from "motion/react-client";
-
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
