@@ -6,12 +6,6 @@ export function About() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const stats = [
-    { value: '15+', label: 'Technologies maîtrisées' },
-    { value: '20+', label: 'Projets réalisés' },
-    { value: '100%', label: 'Succès ready' },
-  ];
-
   return (
     <section id="about" className="py-24 px-6 lg:px-12">
       <div className="max-w-5xl mx-auto" ref={ref}>
