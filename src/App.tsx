@@ -1,5 +1,6 @@
 import { Navigation } from './components/layout/Navigation';
 import { Hero } from './components/sections/Hero';
+import { About } from "./components/sections/About";
 import { Footer } from "./components/layout/Footer";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
 
       <main>
         <Hero />
+        <About />
 
       </main>
 
