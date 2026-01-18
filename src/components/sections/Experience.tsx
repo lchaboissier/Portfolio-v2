@@ -109,12 +109,14 @@ export function Experience() {
                     {/* Technologies */}
                     <div className="flex flex-wrap gap-2">
                       {exp.technologies.map((tech, i) => (
-                        <span
-                          key={i}
-                          className="px-3 py-1 bg-[#6366f1]/20 text-[#6366f1] rounded-md text-xs font-medium"
-                        >
-                          {tech}
-                        </span>
+                          <motion.span
+                              key={i}
+                              className="px-3 py-1 bg-[#6366f1]/20 text-[#6366f1] rounded-md text-xs font-medium cursor-pointer"
+                              whileHover={{ scale: 1.05, backgroundColor: 'rgba(99, 102, 241, 0.3)' }}
+                              transition={{ duration: 0.2 }}
+                          >
+                            {tech}
+                          </motion.span>
                       ))}
                     </div>
                   </div>
