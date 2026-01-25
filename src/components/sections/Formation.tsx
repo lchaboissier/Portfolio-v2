@@ -14,8 +14,11 @@ export function Formation() {
       location: 'Nantes, France',
       level: 'Bac+5',
       status: 'En cours',
-      description: `Formation d'excellence en développement web avancé. Spécialisation en architectures modernes, développement full-stack et gestion de projets complexes. Apprentissage des meilleures pratiques du marché et des technologies de pointe.`,
-      technologies: ['React', 'Node.js', 'TypeScript', 'Architecture', 'DevOps', 'Cloud'],
+      missions: [
+        'Formation d\'expert en développement couvrant la conception intégrale d\'applications web (Front & Back) et l\'architecture logicielle.',
+        'Apprentissage approfondi des frameworks modernes, de l\'intégration continue (DevOps) et du pilotage de projets techniques en équipe.'
+      ],
+      technologies: ['Deno', 'Svelte', 'MongoDB', 'Rust', 'NestJS', 'Angular', 'Azure', 'GitHub CI/CD'],
     },
     {
       title: 'Licence Informatique - Conception et Développement d\'Applications',
@@ -23,8 +26,11 @@ export function Formation() {
       period: 'Septembre 2023 - Juin 2024',
       location: 'Brest (29), France',
       level: 'Bac+3',
-      description: `Formation universitaire en informatique avec spécialisation en conception et développement d'applications. Analyse, modélisation, conception et mise en œuvre de solutions informatiques adaptées. Apprentissage des méthodologies de développement et des bonnes pratiques logicielles.`,
-      technologies: ['Java', 'UML', 'Base de données', 'Algorithmes', 'Gestion de projet'],
+      missions: [
+        'Formation universitaire généraliste en Informatique. Parcours CDA axé sur l\'approfondissement des fondamentaux théoriques et l\'architecture logicielle.',
+        'Apprentissage de la programmation avancée, de la modélisation de systèmes complexes et de l\'administration des réseaux IP.'
+      ],
+      technologies: ['Java', 'Eclipse', 'PHP', 'SQL', 'CodeIgniter'],
     },
     {
       title: 'Licence Professionnelle : Applications Mobiles et Internet des Objets (LP AMIO)',
@@ -32,26 +38,35 @@ export function Formation() {
       period: 'Septembre 2022 - Juin 2023',
       location: 'Saint-Dié-des-Vosges (88), France',
       level: 'Bac+3',
-      description: `Formation spécialisée en développement d'applications mobiles et Internet des Objets. Conception et développement d'applications cross-platform. Intégration avec des objets connectés et gestion des communications IoT.`,
-      technologies: ['Android', 'iOS', 'React Native', 'IoT', 'API REST', 'Firebase'],
+      missions: [
+        'Formation spécialisée dans la conception d\'applications mobiles et Web et l\'intégration de l\'IoT.',
+        'Apprentissage du développement natif et hybride, de la communication avec des équipements connectés et de la gestion de données.'
+      ],
+      technologies: ['Raspberry Pi', 'Arduino', 'PHP', 'Angular', 'Symfony', 'Swift', 'Flutter', 'React Native', 'Firebase', '4D', 'WinDev'],
     },
     {
-      title: 'BTS Services Informatiques aux Organisations (Option SLAM)',
+      title: 'BTS SIO (Option SLAM)',
       school: 'Lycée Notre-Dame du Roc',
       period: 'Septembre 2020 - Juin 2022',
       location: 'La Roche-sur-Yon (85), France',
       level: 'Bac+2',
-      description: `Formation technique en développement informatique avec spécialisation en Solutions Logicielles et Applications Métiers. Développement d'applications de gestion, conception de bases de données et création de solutions logicielles adaptées aux besoins des organisations.`,
-      technologies: ['PHP', 'SQL', 'Windows 10', 'Visual Studio', 'Programmation orientée objet'],
+      missions: [
+        'Formation technique en développement informatique. Option SLAM (Solutions Logicielles et Applications Métiers) axée sur la conception et le développement d\'applications.',
+        'Apprentissage de la programmation, des bases de données et de la gestion de projets.',
+      ],
+      technologies: ['Visual Studio', 'Laravel', 'PHP', 'Python', 'SQL', 'C#', 'Flutter'],
     },
     {
-      title: 'Baccalauréat Technologique STI2D - Spécialité SIN',
+      title: 'Bac STI2D - Spécialité SIN',
       school: 'Lycée Jean de Lattre de Tassigny',
       period: 'Septembre 2018 - Juin 2020',
       location: 'La Roche-sur-Yon (85), France',
       level: 'Bac',
-      description: `Baccalauréat Sciences et Technologies de l'Industrie et du Développement Durable avec spécialité Système d'Information et Numérique. Formation aux bases de l'informatique, de l'électronique et des systèmes numériques. Apprentissage de l'anglais technique.`,
-      technologies: ['Systèmes embarqués', 'Programmation', 'Électronique', 'Anglais'],
+      missions: [
+        'Baccalauréat technologique avec spécialité Systèmes d\'Information et Numérique.',
+        'Apprentissage des bases de la programmation, des réseaux et des systèmes embarqués à travers des projets pratiques.'
+      ],
+      technologies: ['HTML/CSS', 'C', 'Arduino', 'Proteus', 'SolidWorks'],
     },
   ];
 
@@ -65,7 +80,7 @@ export function Formation() {
               transition={{ duration: 0.6 }}
               className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-3">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
               Formations
             </h2>
             <div className="w-16 h-1 bg-[#6366f1] mx-auto rounded-full"></div>
@@ -130,10 +145,18 @@ export function Formation() {
                           </p>
                         </div>
 
-                        {/* Description */}
-                        <p className="text-gray-400 text-sm mb-4 leading-relaxed">
-                          {formation.description}
-                        </p>
+                        {/* Missions */}
+                        <ul className="text-gray-400 text-sm mb-4 leading-relaxed">
+                          {formation.missions && (
+                              <ul className="text-gray-400 text-sm mb-4 leading-relaxed">
+                                {formation.missions.map((mission, i) => (
+                                    <li key={i} className="mb-1">
+                                      <span className="text-[#6366f1] font-medium">•</span> {mission}
+                                    </li>
+                                ))}
+                              </ul>
+                          )}
+                        </ul>
 
                         {/* Technologies */}
                         <div className="flex flex-wrap gap-2">

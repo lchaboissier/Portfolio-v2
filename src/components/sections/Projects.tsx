@@ -47,7 +47,7 @@ export function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-24 px-6 lg:px-12 bg-[#0f0f14]">
+    <section id="projects" className="py-24 px-6 lg:px-12 bg-[#0a0a0f]">
       <div className="max-w-7xl mx-auto" ref={ref}>
         {/* Titre de section */}
         <motion.div
@@ -56,7 +56,7 @@ export function Projects() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-3">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
             Projets
           </h2>
           <div className="w-16 h-1 bg-[#6366f1] mx-auto rounded-full"></div>

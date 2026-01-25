@@ -32,7 +32,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 lg:px-12 bg-[#0a0a0f]">
+    <section id="contact" className="py-24 px-6 lg:px-12">
       <div className="max-w-4xl mx-auto" ref={ref}>
         {/* Titre de section */}
         <motion.div
@@ -41,7 +41,7 @@ export function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-3">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
             Contactez-moi
           </h2>
           <div className="w-16 h-1 bg-[#6366f1] mx-auto rounded-full mb-6"></div>

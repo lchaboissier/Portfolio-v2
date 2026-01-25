@@ -8,19 +8,26 @@ export function Experience() {
 
   const experiences = [
     {
-      title: 'Alternance - Développeur Web',
+      title: 'Alternance - Développeur Backend Symfony',
       company: 'APRIL Marine',
       period: 'Octobre 2024 - Maintenant',
       location: 'Les Sables d\'Olonne, France',
-      description: `Développement d'applications web en alternance. Participation au développement et à la maintenance de solutions digitales pour le secteur maritime. Travail en équipe sur des projets innovants et collaboration avec les différents services de l'entreprise.`,
-      technologies: ['PHP', 'Symfony', 'JavaScript', 'MySQL', 'Git'],
+      missions: [
+        'Participation à des projets de parcours de vente de gestion d\'assurance et application mobile',
+        'Développement de composants applicatifs en collaboration avec les équipes métiers et techniques',
+        'Réalisation de tests et maintenance des applications'
+      ],
+      technologies: ['PHP', 'Symfony', 'MySQL', 'Docker', 'Podman', 'RabbitMQ', 'Gravitee', 'Git', 'GitLab', 'Jira', 'Confluence'],
     },
     {
       title: 'Stage - Développeur Informatique',
       company: 'Addix Informatique',
       period: 'Avril 2024 - Juin 2024',
       location: 'Challans, France',
-      description: `Développement d'une API permettant la synchronisation de données entre deux logiciels. Conception et implémentation d'une solution d'intégration robuste. Analyse des besoins métier et proposition de solutions techniques adaptées.`,
+      missions: [
+        'Développement d\'une API permettant la synchronisation de données entre deux logiciels',
+        'Analyse des besoins métier et proposition de solutions techniques adaptées'
+      ],
       technologies: ['API', 'PHP', 'MySQL', 'Git'],
     },
     {
@@ -28,7 +35,10 @@ export function Experience() {
       company: 'Cyberscope',
       period: 'Janvier 2023 - Mars 2023',
       location: 'La Roche-sur-Yon, France',
-      description: `Développement d'une application Web BackOffice avec le framework Symfony. Création de fonctionnalités d'administration complètes. Intégration de bonnes pratiques de développement et respect des standards de sécurité.`,
+      missions: [
+        'Développement d\'une application Web BackOffice avec le framework Symfony',
+        'Création de fonctionnalités d\'administration complètes'
+      ],
       technologies: ['Symfony', 'PHP', 'MySQL', 'JavaScript', 'Git'],
     },
     {
@@ -36,7 +46,11 @@ export function Experience() {
       company: 'Cyberscope',
       period: 'Janvier 2022 - Février 2022',
       location: 'La Roche-sur-Yon, France',
-      description: `Développement d'une application Web BackOffice avec le framework Symfony. Découverte du framework et mise en pratique des concepts fondamentaux. Participation au développement de fonctionnalités back-office.`,
+      missions: [
+        'Développement d\'une application Web avec le framework Symfony',
+        'Création de fonctionnalités',
+        'Réalisation de tests unitaires et d\'intégration pour garantir la qualité du code',
+      ],
       technologies: ['Symfony', 'PHP', 'MySQL', 'HTML/CSS'],
     },
     {
@@ -44,8 +58,12 @@ export function Experience() {
       company: 'Leadcode',
       period: 'Mai 2021 - Juin 2021',
       location: 'La Roche-sur-Yon, France',
-      description: `Développement d'une application avec le Framework AdonisJS (FrontEnd). Réalisation de tests unitaires et d'intégration pour garantir la qualité du code. Premier contact avec le développement web professionnel.`,
-      technologies: ['AdonisJS', 'JavaScript', 'Node.js', 'Testing'],
+      missions: [
+        'Développement d\'une application avec le Framework AdonisJS (FrontEnd)',
+        'Réalisation de tests unitaires et d\'intégration pour garantir la qualité du code',
+        'Premier contact avec le développement web professionnel'
+      ],
+      technologies: ['AdonisJS', 'TypeScript', 'JavaScript', 'NodeJS'],
     },
   ];
 
@@ -58,8 +76,8 @@ export function Experience() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-3">
-            Expériences Professionnelles
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+            Expériences professionnelles
           </h2>
           <div className="w-16 h-1 bg-[#6366f1] mx-auto rounded-full"></div>
         </motion.div>
@@ -105,10 +123,14 @@ export function Experience() {
                       </p>
                     </div>
 
-                    {/* Description */}
-                    <p className="text-gray-400 text-sm mb-4 leading-relaxed">
-                      {exp.description}
-                    </p>
+                    {/* Missions */}
+                    <ul className="text-gray-400 text-sm mb-4 leading-relaxed">
+                      {exp.missions.map((mission, i) => (
+                          <li key={i} className="mb-1">
+                            <span className="text-[#6366f1] font-medium">•</span> {mission}
+                          </li>
+                      ))}
+                    </ul>
 
                     {/* Technologies */}
                     <div className="flex flex-wrap gap-2">

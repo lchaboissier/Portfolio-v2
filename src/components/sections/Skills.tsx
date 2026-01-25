@@ -97,8 +97,8 @@ export function Skills() {
               transition={{ duration: 0.6 }}
               className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-3">
-              Compétences Techniques
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+              Compétences techniques
             </h2>
             <div className="w-16 h-1 bg-[#6366f1] mx-auto rounded-full"></div>
           </motion.div>
