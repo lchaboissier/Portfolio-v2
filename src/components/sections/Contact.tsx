@@ -12,16 +12,41 @@ export function Contact() {
     message: '',
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-    
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', message: '' });
-    }, 3000);
+    setIsLoading(true);
+
+    try {
+      const form = new FormData(e.target as HTMLFormElement);
+      form.append("access_key", "d9258d38-6f1a-4eac-886c-d6110ef1037b");
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: form
+      });
+
+      const data = await response.json();
+      console.log('Web3Forms response:', data);
+
+      if (data.success) {
+        setIsSubmitted(true);
+
+        setTimeout(() => {
+          setIsSubmitted(false);
+          setFormData({ name: '', email: '', message: '' });
+        }, 3000);
+      } else {
+        console.error('Erreur Web3Forms:', data);
+        alert('Erreur lors de l\'envoi. Veuillez réessayer.');
+      }
+    } catch (error) {
+      console.error('Erreur:', error);
+      alert('Erreur lors de l\'envoi. Veuillez réessayer.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -30,7 +55,6 @@ export function Contact() {
       [e.target.name]: e.target.value,
     });
   };
-
   return (
     <section id="contact" className="py-24 px-6 lg:px-12">
       <div className="max-w-4xl mx-auto" ref={ref}>
@@ -156,10 +180,11 @@ export function Contact() {
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
+                disabled={isLoading}
                 className="w-full px-6 py-4 bg-[#6366f1] hover:bg-[#5558e3] text-white rounded-lg font-semibold transition-all duration-200 flex items-center justify-center gap-2"
               >
                 <Send size={20} />
-                Envoyer le message
+                {isLoading ? 'Envoi en cours...' : 'Envoyer le message'}
               </motion.button>
             </form>
           )}
