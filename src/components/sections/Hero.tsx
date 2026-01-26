@@ -15,10 +15,26 @@ export function Hero() {
           className="mb-8"
         >
           <div className="w-48 h-48 mx-auto rounded-full bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-1">
-            <div className="w-full h-full rounded-full bg-[#1a1a1f] flex items-center justify-center">
-
+            <div className="w-full h-full rounded-full bg-[#1a1a1f] flex items-center justify-center overflow-hidden">
+              <img
+                  src="assets/profileImage.jpg"
+                  alt="Photo de profil de Louis Chaboissier"
+                  className="w-full h-full object-cover"
+              />
             </div>
           </div>
+        </motion.div>
+
+        {/* Badge de statut */}
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mb-6 inline-block"
+        >
+          <span className="px-6 py-2 bg-gradient-to-r from-amber-500 to-orange-600 text-white rounded-full text-sm font-medium shadow-lg shadow-amber-500/30">
+            🚀 À la recherche d'un poste de Développeur à partir d'Octobre 2026 !
+          </span>
         </motion.div>
 
         <motion.h1
