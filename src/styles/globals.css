@@ -2,14 +2,45 @@
 
 :root {
   --font-size: 16px;
-  --background-primary: #0f0f14;
-  --background-secondary: #1a1a1f;
-  --background-card: #1e1e24;
+
+  /* Mode Light */
+  --background-primary-light: #ffffff;
+  --background-secondary-light: #f8f9fa;
+  --background-card-light: #f1f3f5;
+  --text-primary-light: #1a1a1f;
+  --text-secondary-light: #6b7280;
+  --border-light: rgba(99, 102, 241, 0.2);
+
+  /* Mode Dark */
+  --background-primary-dark: #0f0f14;
+  --background-secondary-dark: #1a1a1f;
+  --background-card-dark: #1e1e24;
+  --text-primary-dark: #ffffff;
+  --text-secondary-dark: #9ca3af;
+  --border-dark: rgba(99, 102, 241, 0.1);
+
+  /* Accents (Partagés) */
   --accent-primary: #6366f1;
   --accent-secondary: #818cf8;
-  --text-primary: #ffffff;
-  --text-secondary: #9ca3af;
-  --border: rgba(99, 102, 241, 0.1);
+
+  /* --- Assignation des Variables Actives (Défaut: Light) --- */
+  --background-primary: var(--background-primary-light);
+  --background-secondary: var(--background-secondary-light);
+  --background-card: var(--background-card-light);
+  --text-primary: var(--text-primary-light);
+  --text-secondary: var(--text-secondary-light);
+  --border-color: var(--border-light);
+}
+
+/* --- Surcharges Mode Dark --- */
+/* Cette classe est ajoutée au <html> par votre ThemeContext */
+:root.dark {
+  --background-primary: var(--background-primary-dark);
+  --background-secondary: var(--background-secondary-dark);
+  --background-card: var(--background-card-dark);
+  --text-primary: var(--text-primary-dark);
+  --text-secondary: var(--text-secondary-dark);
+  --border-color: var(--border-dark);
 }
 
 @layer base {

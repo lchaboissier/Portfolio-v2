@@ -23,17 +23,17 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative border-t border-white/5 bg-[#0a0a0f]">
+    <footer className="relative border-t border-gray-200 dark:border-white/5 bg-white dark:bg-[#0a0a0f]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
           <div className="text-center md:text-left">
             <button
                 onClick={scrollToTop}
-                className="text-xl font-bold text-white hover:text-[#6366f1] transition-colors mb-2 cursor-pointer"
+                className="text-xl font-bold text-gray-900 dark:text-white hover:text-[#6366f1] transition-colors mb-2 cursor-pointer"
             >
               Luca Chaboissier
             </button>
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-600 dark:text-gray-400 text-sm">
               Développeur Web
             </p>
           </div>
@@ -51,7 +51,7 @@ export function Footer() {
                 rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 whileHover={{ scale: 1.1, y: -3 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-10 h-10 bg-[#1a1a1f] border border-white/5 rounded-full flex items-center justify-center text-gray-400 hover:text-[#6366f1] hover:border-[#6366f1]/30 transition-all duration-300"
+                className="w-10 h-10 bg-gray-100 dark:bg-[#1a1a1f] border border-gray-200 dark:border-white/5 rounded-full flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-[#6366f1] hover:border-[#6366f1]/30 transition-all duration-300"
                 aria-label={link.label}
               >
                 <link.icon size={18} />
@@ -61,8 +61,8 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-6 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
-          <p className="text-gray-400 text-center sm:text-left">
+        <div className="pt-6 border-t border-gray-200 dark:border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
+          <p className="text-gray-600 dark:text-gray-400 text-center sm:text-left">
             © {currentYear} Luca Chaboissier. Tous droits réservés.
           </p>
         </div>
@@ -78,7 +78,7 @@ export function Footer() {
               initial={{ opacity: 0, scale: 0.8, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.8, y: 20 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.1 }}
               aria-label="Scroll to top"
           >
             <ArrowUp size={20} />

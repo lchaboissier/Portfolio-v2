@@ -83,12 +83,14 @@ export function Skills() {
         { name: 'Raspberry Pi', logo: 'https://cdn.simpleicons.org/raspberrypi' },
         { name: 'Vite', logo: 'https://cdn.simpleicons.org/vite' },
         { name: 'npm', logo: 'https://cdn.simpleicons.org/npm' },
+        { name: 'Jira', logo: 'https://cdn.simpleicons.org/jira' },
+        { name: 'Gravitee', logo: 'https://www.gravitee.io/hubfs/Background_logo.svg' },
       ],
     },
   ];
 
   return (
-      <section id="skills" className="py-24 px-6 lg:px-12">
+      <section id="skills" className="py-24 px-6 lg:px-12 bg-white dark:bg-[#0f0f14]">
         <div className="max-w-7xl mx-auto" ref={ref}>
           {/* Titre de section */}
           <motion.div
@@ -97,7 +99,7 @@ export function Skills() {
               transition={{ duration: 0.6 }}
               className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8">
               Compétences techniques
             </h2>
             <div className="w-16 h-1 bg-[#6366f1] mx-auto rounded-full"></div>
@@ -113,7 +115,7 @@ export function Skills() {
                     transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
                 >
                   {/* Titre de catégorie */}
-                  <h3 className="text-2xl font-bold text-white text-center mb-8">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white text-center mb-8">
                     {category.title}
                   </h3>
 
@@ -133,7 +135,7 @@ export function Skills() {
                               duration: 0.2,
                               ease: "easeOut"
                             }}
-                            className="bg-[#1e1e24] border border-white/5 rounded-xl p-6 text-center hover:border-[#6366f1]/30 transition-colors duration-200 cursor-pointer w-36 h-36 flex flex-col items-center justify-center"
+                            className="bg-gray-100 dark:bg-[#1e1e24] border border-gray-200 dark:border-white/5 rounded-xl p-6 text-center hover:border-[#6366f1]/30 transition-colors duration-200 cursor-pointer w-36 h-36 flex flex-col items-center justify-center"
                         >
                           {/* Icône officielle */}
                           <div className="mb-3 flex items-center justify-center h-16">
@@ -145,7 +147,7 @@ export function Skills() {
                           </div>
 
                           {/* Nom en bas */}
-                          <div className="text-white font-medium text-sm">
+                          <div className="text-gray-900 dark:text-white font-medium text-sm">
                             {skill.name}
                           </div>
                         </motion.div>

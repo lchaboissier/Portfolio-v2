@@ -7,15 +7,15 @@ export function About() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="py-24 px-6 lg:px-12 bg-[#0a0a0f]">
-      <div className="max-w-5xl mx-auto" ref={ref}>
+    <section id="about" className="py-24 px-6 lg:px-12 relative overflow-hidden bg-white dark:bg-[#0f0f14]">
+      <div className="max-w-5xl mx-auto relative z-10" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8">
             À propos de moi
           </h2>
           <div className="w-16 h-1 bg-[#6366f1] mx-auto rounded-full"></div>
@@ -26,7 +26,7 @@ export function About() {
               initial={{ opacity: 0, x: 30 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-gray-400 space-y-4 leading-relaxed"
+              className="text-gray-600 dark:text-gray-400 space-y-4 leading-relaxed"
           >
             <p>
               J'ai débuté mon parcours de développeur avec le BTS SIO. C'est là que j'ai posé mes premières bases en{' '}

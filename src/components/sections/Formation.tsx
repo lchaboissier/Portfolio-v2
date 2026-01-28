@@ -71,7 +71,7 @@ export function Formation() {
   ];
 
   return (
-      <section id="education" className="py-24 px-6 lg:px-12 bg-[#0a0a0f]">
+      <section id="education" className="py-24 px-6 lg:px-12 bg-gray-50 dark:bg-[#0a0a0f]">
         <div className="max-w-5xl mx-auto" ref={ref}>
           {/* Titre */}
           <motion.div
@@ -80,14 +80,14 @@ export function Formation() {
               transition={{ duration: 0.6 }}
               className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8">
               Formations
             </h2>
             <div className="w-16 h-1 bg-[#6366f1] mx-auto rounded-full"></div>
           </motion.div>
 
           <div className="relative">
-            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-[#6366f1] transform -translate-x-1/2 hidden md:block"></div>
+            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-[#6366f1]/30 dark:bg-[#6366f1] transform -translate-x-1/2 hidden md:block"></div>
 
             {/* Formations */}
             <div className="space-y-12">
@@ -108,7 +108,7 @@ export function Formation() {
                         index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'
                     }`}>
                       <motion.div
-                          className="bg-[#1e1e24] border border-white/5 rounded-xl p-6 hover:border-[#6366f1]/30 transition-colors duration-200"
+                          className="bg-gray-100 dark:bg-[#1e1e24] border border-gray-200 dark:border-white/5 rounded-xl p-6 hover:border-[#6366f1]/30 transition-colors duration-200"
                           whileHover={{
                             y: -5,
                             scale: 1.02
@@ -131,7 +131,7 @@ export function Formation() {
                         </div>
 
                         {/* Titre */}
-                        <h3 className="text-xl font-bold text-white mb-2">
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                           {formation.title}
                         </h3>
 
@@ -140,15 +140,15 @@ export function Formation() {
                           <p className="text-[#6366f1] font-medium text-sm mb-1">
                             {formation.school}
                           </p>
-                          <p className="text-gray-400 text-xs">
+                          <p className="text-gray-600 dark:text-gray-400 text-xs">
                             {formation.period} | {formation.location}
                           </p>
                         </div>
 
                         {/* Missions */}
-                        <ul className="text-gray-400 text-sm mb-4 leading-relaxed">
+                        <ul className="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed">
                           {formation.missions && (
-                              <ul className="text-gray-400 text-sm mb-4 leading-relaxed">
+                              <ul className="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed">
                                 {formation.missions.map((mission, i) => (
                                     <li key={i} className="mb-1">
                                       <span className="text-[#6366f1] font-medium">•</span> {mission}
@@ -174,7 +174,7 @@ export function Formation() {
                       </motion.div>
                     </div>
 
-                    <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#6366f1] rounded-full border-4 border-[#0a0a0f] z-10"></div>
+                    <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#6366f1] rounded-full border-4 border-gray-50 dark:border-[#0a0a0f] z-10"></div>
 
                     <div className="hidden md:block w-[calc(50%-2rem)]"></div>
                   </motion.div>

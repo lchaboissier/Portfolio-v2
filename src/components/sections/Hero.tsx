@@ -14,8 +14,8 @@ export function Hero() {
           transition={{ duration: 0.6 }}
           className="mb-8"
         >
-          <div className="w-48 h-48 mx-auto rounded-full bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-1">
-            <div className="w-full h-full rounded-full bg-[#1a1a1f] flex items-center justify-center overflow-hidden">
+          <div className="w-48 h-48 mx-auto rounded-full bg-linear-to-br from-indigo-500 via-purple-500 to-pink-500 p-1">
+            <div className="w-full h-full rounded-full bg-gray-100 dark:bg-[#1a1a1f] flex items-center justify-center overflow-hidden">
               <img
                   src="assets/profileImage.jpg"
                   alt="Photo de profil de Louis Chaboissier"
@@ -32,7 +32,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mb-6 inline-block"
         >
-          <span className="px-6 py-2 bg-gradient-to-r from-amber-500 to-orange-600 text-white rounded-full text-sm font-medium shadow-lg shadow-amber-500/30">
+          <span className="px-6 py-2 bg-linear-to-r from-amber-400 to-orange-500 text-white rounded-full text-sm font-medium shadow-lg shadow-amber-500/30">
             🚀 À la recherche d'un poste de Développeur à partir d'Octobre 2026 !
           </span>
         </motion.div>
@@ -41,7 +41,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-5xl sm:text-6xl md:text-7xl font-bold mb-4 text-white"
+          className="text-5xl sm:text-6xl md:text-7xl font-bold mb-4 text-gray-900 dark:text-white"
         >
           Luca Chaboissier
         </motion.h1>
@@ -50,7 +50,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-xl sm:text-2xl md:text-3xl text-gray-400 mb-6"
+          className="text-xl sm:text-2xl md:text-3xl text-gray-600 dark:text-gray-400 mb-6"
         >
           Alternant Développeur Web
         </motion.h2>
@@ -60,7 +60,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
           Développeur Web en alternance, je réalise des applications web fonctionnelles et adaptées aux besoins.
           Spécialisé en <span className="text-[#6366f1] font-semibold">PHP/Symfony</span>,
@@ -89,7 +89,7 @@ export function Hero() {
             href="#contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 border-2 border-white/20 hover:border-white/40 text-white rounded-full font-medium transition-all duration-200 cursor-pointer"
+            className="px-8 py-3 border-2 border-gray-300 dark:border-white/20 hover:border-gray-400 dark:hover:border-white/40 text-gray-900 dark:text-white rounded-full font-medium transition-all duration-200 cursor-pointer"
           >
             <Mail className="inline mr-2" size={20} />
             Me contacter

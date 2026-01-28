@@ -47,7 +47,7 @@ export function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-24 px-6 lg:px-12 bg-[#0a0a0f]">
+    <section id="projects" className="py-24 px-6 lg:px-12 bg-gray-50 dark:bg-[#0f0f14]">
       <div className="max-w-7xl mx-auto" ref={ref}>
         {/* Titre de section */}
         <motion.div
@@ -56,7 +56,7 @@ export function Projects() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8">
             Projets
           </h2>
           <div className="w-16 h-1 bg-[#6366f1] mx-auto rounded-full"></div>
@@ -72,34 +72,34 @@ export function Projects() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
               >
                 <motion.div
-                    className="bg-[#1e1e24] border border-white/5 rounded-xl overflow-hidden h-full flex flex-col group"
+                    className="bg-white dark:bg-[#1e1e24] border border-gray-200 dark:border-white/5 rounded-xl overflow-hidden h-full flex flex-col group"
                     whileHover={{ y: -8, scale: 1.02 }}
                     transition={{ duration: 0.2, ease: "easeOut" }}
                 >
                   {/* Image bannière */}
-                  <div className="relative w-full h-48 overflow-hidden bg-[#1a1a20]">
+                  <div className="relative w-full h-48 overflow-hidden bg-gray-100 dark:bg-[#1a1a20]">
                     <img
                         src={project.image}
                         alt={project.title}
                         className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1e1e24] via-transparent to-transparent pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-[#1e1e24] via-transparent to-transparent pointer-events-none"></div>
                   </div>
 
                   {/* Contenu */}
-                  <div className="p-6 flex flex-col flex-grow border-t border-white/5 group-hover:border-[#6366f1]/30 transition-colors duration-200">
+                  <div className="p-6 flex flex-col flex-grow border-t border-gray-200 dark:border-white/5 group-hover:border-[#6366f1]/30 transition-colors duration-200">
                     {/* Type d'application */}
                     <span className="inline-block px-3 py-1 bg-[#6366f1]/20 text-[#6366f1] rounded-full text-xs font-semibold mb-4 w-fit">
                     {project.type}
                   </span>
 
                     {/* Titre */}
-                    <h3 className="text-2xl font-bold text-white mb-3">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
                       {project.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-gray-400 text-sm leading-relaxed mb-4 flex-grow">
+                    <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4 flex-grow">
                       {project.description}
                     </p>
 
@@ -134,7 +134,7 @@ export function Projects() {
                           </motion.a>
                       ) : (
                           <div className="flex-1 relative group/tooltip">
-                            <div className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-gray-700/50 text-gray-400 rounded-lg text-sm font-medium cursor-not-allowed">
+                            <div className="flex items-center justify-center gap-2 px-4 py-2.5 bg-gray-700/50 text-gray-200 rounded-lg text-sm font-medium cursor-not-allowed">
                               <ExternalLink size={16} />
                               Indisponible
                             </div>
