@@ -7,25 +7,27 @@ import { Formation } from "./components/sections/Formation";
 import { Skills } from "./components/sections/Skills";
 import { Projects } from "./components/sections/Projects";
 import { Contact } from "./components/sections/Contact";
+import { ThemeProvider } from './contexts/ThemeContext';
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#0f0f14] text-white">
-      <Navigation />
+      <ThemeProvider>
+          <div className="min-h-screen bg-gray-50 dark:bg-[#0f0f14] text-gray-900 dark:text-white transition-colors duration-300">
+              <Navigation />
 
-      <main>
-        <Hero />
-        <About />
-        <Experience />
-        <Formation />
-        <Skills />
-        <Projects />
-        <Contact />
+              <main>
+                  <Hero />
+                  <About />
+                  <Experience />
+                  <Formation />
+                  <Skills />
+                  <Projects />
+                  <Contact />
+              </main>
 
-      </main>
-
-      <Footer />
-    </div>
+              <Footer />
+          </div>
+      </ThemeProvider>
   );
 }
 

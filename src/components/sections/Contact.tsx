@@ -56,7 +56,7 @@ export function Contact() {
     });
   };
   return (
-    <section id="contact" className="py-24 px-6 lg:px-12">
+    <section id="contact" className="py-24 px-6 lg:px-12 bg-white dark:bg-[#0a0a0f]">
       <div className="max-w-4xl mx-auto" ref={ref}>
         {/* Titre de section */}
         <motion.div
@@ -65,11 +65,11 @@ export function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8">
             Contactez-moi
           </h2>
           <div className="w-16 h-1 bg-[#6366f1] mx-auto rounded-full mb-6"></div>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             N'hésitez pas à me contacter.
             Je reste ouvert aux nouvelles opportunités !
           </p>
@@ -94,7 +94,7 @@ export function Contact() {
               rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
               whileHover={{ y: -5, scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
-              className="w-14 h-14 bg-[#1a1a1f] border border-white/5 rounded-full flex items-center justify-center text-gray-400 hover:text-[#6366f1] hover:border-[#6366f1]/30 transition-all duration-300"
+              className="w-14 h-14 bg-gray-100 dark:bg-[#1a1a1f] border border-gray-200 dark:border-white/5 rounded-full flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-[#6366f1] hover:border-[#6366f1]/30 duration-100"
               aria-label={social.label}
             >
               <social.icon size={24} />
@@ -107,7 +107,7 @@ export function Contact() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="bg-[#1a1a1f] border border-white/5 rounded-2xl p-8"
+          className="bg-gray-100 dark:bg-[#1a1a1f] border border-gray-200 dark:border-white/5 rounded-2xl p-8"
         >
           {isSubmitted ? (
             <motion.div
@@ -123,13 +123,13 @@ export function Contact() {
               >
                 <CheckCircle2 className="text-green-500" size={64} />
               </motion.div>
-              <h3 className="text-2xl font-bold text-white mb-2">Message envoyé !</h3>
-              <p className="text-gray-400">Je vous répondrai dans les plus brefs délais.</p>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Message envoyé !</h3>
+              <p className="text-gray-600 dark:text-gray-400">Je vous répondrai dans les plus brefs délais.</p>
             </motion.div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">
                   Nom
                 </label>
                 <input
@@ -139,13 +139,13 @@ export function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-[#0f0f14] border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#6366f1] transition-all"
+                  className="w-full px-4 py-3 bg-white dark:bg-[#0f0f14] border border-gray-300 dark:border-white/10 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-[#6366f1] transition-all"
                   placeholder="Votre nom"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">
                   Email
                 </label>
                 <input
@@ -155,13 +155,13 @@ export function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-[#0f0f14] border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#6366f1] transition-all"
+                  className="w-full px-4 py-3 bg-white dark:bg-[#0f0f14] border border-gray-300 dark:border-white/10 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-[#6366f1] transition-all"
                   placeholder="votre.email@example.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">
                   Message
                 </label>
                 <textarea
@@ -171,7 +171,7 @@ export function Contact() {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 bg-[#0f0f14] border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#6366f1] transition-all resize-none"
+                  className="w-full px-4 py-3 bg-white dark:bg-[#0f0f14] border border-gray-300 dark:border-white/10 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-[#6366f1] transition-all resize-none"
                   placeholder="Votre message..."
                 />
               </div>
@@ -181,7 +181,7 @@ export function Contact() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 disabled={isLoading}
-                className="w-full px-6 py-4 bg-[#6366f1] hover:bg-[#5558e3] text-white rounded-lg font-semibold transition-all duration-200 flex items-center justify-center gap-2"
+                className="w-full px-6 py-4 bg-[#6366f1] hover:bg-[#5558e3] text-white rounded-lg font-semibold transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <Send size={20} />
                 {isLoading ? 'Envoi en cours...' : 'Envoyer le message'}
