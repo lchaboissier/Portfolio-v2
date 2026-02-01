@@ -73,7 +73,7 @@ export function Footer() {
           <motion.button
               onClick={scrollToTop}
               className="fixed bottom-8 right-8 w-12 h-12 bg-[#6366f1] hover:bg-[#5558e3] text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 z-40"
-              whileHover={{ scale: 1.1, y: -3 }}
+              whileHover={{ scale: 1.02, y: -3 }}
               whileTap={{ scale: 0.9 }}
               initial={{ opacity: 0, scale: 0.8, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}

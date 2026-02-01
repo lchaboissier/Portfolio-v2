@@ -77,7 +77,7 @@ export function Hero() {
         >
           <motion.a
             href="#experience"
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.95 }}
             className="px-8 py-3 bg-[#6366f1] hover:bg-[#5558e3] text-white rounded-full font-medium transition-all duration-200 flex items-center gap-2 cursor-pointer"
           >
@@ -87,7 +87,7 @@ export function Hero() {
 
           <motion.a
             href="#contact"
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.95 }}
             className="px-8 py-3 border-2 border-gray-300 dark:border-white/20 hover:border-gray-400 dark:hover:border-white/40 text-gray-900 dark:text-white rounded-full font-medium transition-all duration-200 cursor-pointer"
           >
@@ -98,7 +98,7 @@ export function Hero() {
           <motion.a
               href="/cv/CV_Luca_Chaboissier.pdf"
               download="CV_Luca_Chaboissier.pdf"
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-3 bg-pink-600 hover:bg-pink-700 text-white rounded-full font-medium transition-all duration-200 flex items-center gap-2"
           >
