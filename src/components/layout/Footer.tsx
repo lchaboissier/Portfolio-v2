@@ -49,9 +49,9 @@ export function Footer() {
                 href={link.href}
                 target={link.href.startsWith('http') ? '_blank' : undefined}
                 rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                whileHover={{ scale: 1.1, y: -3 }}
+                whileHover={{ y: -5, scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-10 h-10 bg-gray-100 dark:bg-[#1a1a1f] border border-gray-200 dark:border-white/5 rounded-full flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-[#6366f1] hover:border-[#6366f1]/30 transition-all duration-300"
+                className="w-10 h-10 bg-gray-100 dark:bg-[#1a1a1f] border border-gray-200 dark:border-white/5 rounded-full flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-[#6366f1] hover:border-[#6366f1]/30 duration-100"
                 aria-label={link.label}
               >
                 <link.icon size={18} />
