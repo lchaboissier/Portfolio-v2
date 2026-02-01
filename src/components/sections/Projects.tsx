@@ -14,7 +14,7 @@ export function Projects() {
       type: 'Application Web',
       image: './projects/smartexpo.png',
       technologies: ['HTML', 'CSS', 'PHP', 'CodeIgniter', 'Bootstrap', 'SQL'],
-      liveUrl: null,
+      liveUrl: 'https://dev-data.alwaysdata.net/',
       codeUrl: 'https://github.com/lchaboissier/smartexpo',
     },
     {
