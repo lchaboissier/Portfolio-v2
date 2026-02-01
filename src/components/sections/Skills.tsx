@@ -105,7 +105,7 @@ export function Skills() {
             <div className="w-16 h-1 bg-[#6366f1] mx-auto rounded-full"></div>
           </motion.div>
 
-          {/* Grille de compétences style Léo */}
+          {/* Grille de compétences */}
           <div className="space-y-16">
             {skillCategories.map((category, categoryIndex) => (
                 <motion.div

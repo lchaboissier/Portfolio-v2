@@ -1,11 +1,22 @@
 import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
-import { useRef } from 'react';
-import { ExternalLink, Github } from 'lucide-react';
+import { useRef, useState } from 'react';
+import {ExternalLink, Github, ImageIcon} from 'lucide-react';
+import { ImageGallery } from "../../components/ui/ImageGallery";
 
 export function Projects() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const [galleryOpen, setGalleryOpen] = useState(false);
+  const [currentGalleryImages, setCurrentGalleryImages] = useState<string[]>([]);
+  const [currentGalleryTitle, setCurrentGalleryTitle] = useState("");
+
+  const openGallery = (images: string[], title: string) => {
+    setCurrentGalleryImages(images);
+    setCurrentGalleryTitle(title);
+    setGalleryOpen(true);
+  };
 
   const projects = [
     {
@@ -34,6 +45,15 @@ export function Projects() {
       technologies: ['HTML', 'CSS', 'PHP', 'Symfony', 'SQL', 'Docker'],
       liveUrl: null,
       codeUrl: 'https://github.com/lchaboissier/pixel',
+      galleryImages: [
+        './projects/pixel/Page d\'accueil.png',
+        './projects/pixel/Page d\'accueil (après connexion).png',
+        './projects/pixel/Page d\'inscription.png',
+        './projects/pixel/Page de connexion.png',
+        './projects/pixel/Liste des jeux.png',
+        './projects/pixel/Liste des éditeurs.png',
+        './projects/pixel/Liste des supports.png',
+      ],
     },
     {
       title: 'Foodeat',
@@ -43,6 +63,13 @@ export function Projects() {
       technologies: ['Swift', 'API'],
       liveUrl: null,
       codeUrl: 'https://github.com/lchaboissier/foodeat',
+      galleryImages: [
+        './projects/foodeat/Accueil.png',
+        './projects/foodeat/Détail.png',
+        './projects/foodeat/Liste des plats.png',
+        './projects/foodeat/Relance choix plat.png',
+        './projects/foodeat/Relance choix plat 2.png',
+      ],
     },
   ];
 
@@ -132,6 +159,22 @@ export function Projects() {
                             <ExternalLink size={16} />
                             Voir le site
                           </motion.a>
+                      ) : project.galleryImages && project.galleryImages.length > 0 ? (
+                          <motion.button
+                              onClick={() =>
+                                  openGallery(project.galleryImages!, project.title)
+                              }
+                              className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-[#6366f1] text-white rounded-lg text-sm font-medium"
+                              whileHover={{
+                                scale: 1.05,
+                                backgroundColor: "#5558e3",
+                              }}
+                              whileTap={{ scale: 0.98 }}
+                              transition={{ duration: 0.15 }}
+                          >
+                            <ImageIcon size={16} />
+                            Voir les images
+                          </motion.button>
                       ) : (
                           <div className="flex-1 relative group/tooltip">
                             <div className="flex items-center justify-center gap-2 px-4 py-2.5 bg-gray-700/50 text-gray-200 rounded-lg text-sm font-medium cursor-not-allowed">
@@ -163,6 +206,13 @@ export function Projects() {
           ))}
         </div>
       </div>
+      {/* Galerie d'images */}
+      <ImageGallery
+          images={currentGalleryImages}
+          isOpen={galleryOpen}
+          onClose={() => setGalleryOpen(false)}
+          projectTitle={currentGalleryTitle}
+      />
     </section>
   );
 }
