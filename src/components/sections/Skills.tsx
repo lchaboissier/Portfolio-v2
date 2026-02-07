@@ -13,11 +13,10 @@ export function Skills() {
         { name: 'PHP', logo: 'https://cdn.simpleicons.org/php' },
         { name: 'JavaScript', logo: 'https://cdn.simpleicons.org/javascript' },
         { name: 'TypeScript', logo: 'https://cdn.simpleicons.org/typescript' },
-        { name: 'SQL', logo: 'https://cdn.simpleicons.org/mysql' },
+        { name: 'Python', logo: 'https://cdn.simpleicons.org/python' },
         { name: 'Java', logo: 'https://cdn-icons-png.flaticon.com/512/5968/5968282.png' },
         { name: 'C#', logo: 'https://cdn-icons-png.flaticon.com/512/6132/6132221.png' },
         { name: 'C', logo: 'https://cdn.simpleicons.org/c' },
-        { name: 'Python', logo: 'https://cdn.simpleicons.org/python' },
       ],
     },
     {
@@ -25,9 +24,9 @@ export function Skills() {
       skills: [
         { name: 'React', logo: 'https://cdn.simpleicons.org/react' },
         { name: 'Angular', logo: 'https://cdn.simpleicons.org/angular/DD0031' },
+        { name: 'Svelte', logo: 'https://cdn.simpleicons.org/svelte' },
         { name: 'HTML5', logo: 'https://cdn.simpleicons.org/html5' },
         { name: 'CSS3', logo: 'https://cdn-icons-png.flaticon.com/512/732/732190.png' },
-        { name: 'Blazor', logo: 'https://cdn.simpleicons.org/blazor' },
       ],
     },
     {
@@ -39,6 +38,7 @@ export function Skills() {
         { name: 'CodeIgniter', logo: 'https://cdn.simpleicons.org/codeigniter' },
         { name: 'AdonisJS', logo: 'https://cdn.simpleicons.org/adonisjs' },
         { name: 'API Platform', logo: 'https://api-platform.com/images/logos/Logo_Circle%20webby%20blue.svg' },
+        { name: 'Deno', logo: 'https://cdn.simpleicons.org/deno' },
       ],
     },
     {
@@ -83,6 +83,8 @@ export function Skills() {
         { name: 'Raspberry Pi', logo: 'https://cdn.simpleicons.org/raspberrypi' },
         { name: 'Vite', logo: 'https://cdn.simpleicons.org/vite' },
         { name: 'npm', logo: 'https://cdn.simpleicons.org/npm' },
+        { name: 'Postman', logo: 'https://cdn.simpleicons.org/postman' },
+        { name: 'Insomnia', logo: 'https://cdn.simpleicons.org/insomnia' },
         { name: 'Jira', logo: 'https://cdn.simpleicons.org/jira' },
         { name: 'Gravitee', logo: 'https://www.gravitee.io/hubfs/Background_logo.svg' },
       ],
